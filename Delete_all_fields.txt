@@ -1,0 +1,14 @@
+
+import arcpy
+
+wq = "E:/TEST/ASHPs/test6/mkyy.gdb/villg"
+
+
+
+fields = [f.name for f in arcpy.ListFields(wq)]
+print(fields)
+
+fields.remove('Shape')
+fields.remove('ObjectID')
+
+arcpy.DeleteField_management(wq, fields)
